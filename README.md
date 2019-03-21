@@ -17,6 +17,7 @@
 
 ### Sunny 
 - Links
+	- https://realpython.com/tutorials/front-end/
 	- https://realpython.com/django-and-ajax-form-submissions/
 	- Adding More
 
