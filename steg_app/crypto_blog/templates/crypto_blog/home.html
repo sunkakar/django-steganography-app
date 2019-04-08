@@ -1,0 +1,11 @@
+{% extends "crypto_blog/base.html" %}
+{% block content %}
+
+    <h1>Blog Home</h1>
+    {% for post in posts %}
+        <h2>{{ post.title }}</h2>
+        <h6>By {{post.author}} on {{ post.date_posted }}</h6>
+        <p>{{ post.content }}</p>
+    {% endfor %}
+
+{% endblock content %}
