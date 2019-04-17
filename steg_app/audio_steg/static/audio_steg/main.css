@@ -35,6 +35,14 @@ body {
     border-radius: 3px;
     margin-bottom: 20px;
   }
+
+  .roboto{
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .lato{
+    font-family: 'Lato', sans-serif;
+  }
   
   #content-block{
     animation: fadein 1.5s;
