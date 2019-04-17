@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 ## Add applications here any time you create apps 
 
 INSTALLED_APPS = [
+    'audio_steg.apps.AudioStegConfig',
     'crypto_blog.apps.CryptoBlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
