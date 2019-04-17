@@ -17,6 +17,13 @@
 
 ## Notes
 
+### Install
+`pip install -m python3`
+`pip install -m django`
+
+### Run Web App
+`cd steg_app`
+`python3 manage.py runserver`
 
 ### Sunny 
 - Links
