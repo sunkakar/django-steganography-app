@@ -37,9 +37,9 @@ body {
   }
   
   #content-block{
-    animation: fadein 2.5s;
-    -webkit-animation: fadein 2.5s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 2.5s; /* Firefox < 16 */
+    animation: fadein 1.5s;
+    -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1.5s; /* Firefox < 16 */
   }
 
 @keyframes fadein {
