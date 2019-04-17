@@ -2,9 +2,11 @@
 
 ## To Do 
 * Sunny
-	- Create the Project/Form layout
 	- Write Image Encryption Program in Python(2nd encoding app for encryption in music files)
-	- Setup Front-End in Django
+	- Add Auth
+	- Add SQL Database
+	- Create the Project/Form layout (X)
+	- Setup Front-End in Django (X)
 
 * Shahbegh
 	- Develop the Django front end(1st encoding app)

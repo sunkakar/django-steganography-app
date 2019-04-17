@@ -1,6 +1,15 @@
 {% extends "audio_steg/base.html" %}
 {% block content %}
 
-    <h1>Welcome!</h1>
+    <div class="jumbotron">
+        <h1>Welcome to Steganography!</h1>
+        <p>This app allows you to understand and implement different types of Steganography. Try it out!</p>
+        <p>
+            <a class="btn btn-primary btn-lg" href="/text" role="button">Text</a>
+            <a class="btn btn-primary btn-lg" href="/image" role="button">Image</a>
+            <a class="btn btn-primary btn-lg" href="/audio" role="button">Audio</a>
+        </p>
+    </div>
+
 
 {% endblock content %}
