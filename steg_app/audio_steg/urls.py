@@ -7,5 +7,6 @@ urlpatterns = [
 	path('welcome/',views.steg_welcome, name='welcome-page'),
 	path('audio/',views.steg_audio_input, name='audio-input'),
 	path('text/',views.steg_text_input, name='text-input'),
-	path('image/',views.steg_image_input, name='image-input')
+	path('image/',views.steg_image_input, name='image-input'),
+	path('history/',views.history, name='steg-history')
 ]

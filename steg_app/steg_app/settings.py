@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 ## Add applications here any time you create apps 
 
 INSTALLED_APPS = [
+    'users.apps.UsersConfig',
     'audio_steg.apps.AudioStegConfig',
     'crypto_blog.apps.CryptoBlogConfig',
     'django.contrib.admin',
@@ -108,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'US/East-Indiana'
 
 USE_I18N = True
 

@@ -1,0 +1,15 @@
+{% extends "audio_steg/base.html" %}
+{% block content %}
+    {% for post in posts %}
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2" href="/welcome">Steganography Type: {{post.stegtype}}</a>
+                    <p class="article-content">Hidden Text: "{{ post.hiddentext }}"</p>
+                    <small>{{ post.date }}</small>
+                </div>
+            </div>
+        </article>
+    {% endfor %}    
+
+{% endblock content %}
