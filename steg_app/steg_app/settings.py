@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 ## Add applications here any time you create apps 
 
 INSTALLED_APPS = [
+    'crispy_forms',
     'users.apps.UsersConfig',
     'audio_steg.apps.AudioStegConfig',
     'crypto_blog.apps.CryptoBlogConfig',
@@ -122,3 +123,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'welcome-page'
+
+LOGIN_URL = 'login'
