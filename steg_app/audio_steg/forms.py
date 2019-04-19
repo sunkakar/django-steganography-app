@@ -15,12 +15,28 @@ class UserSignUpForm(UserCreationForm):
 '''
 
 class TextForm(forms.Form):
-    #stegtype = forms.CharField(max_length=10, widget=forms.HiddenInput(), initial='Text')
+    stegtype = forms.CharField(max_length=10, widget=forms.HiddenInput(), initial='Text')
     plaintext = forms.CharField(label='Plain Text', max_length=100)
     hiddentext = forms.CharField(label='Hidden Text', max_length=35)    
 
     class Meta:
         model = Post
+
+class ImageForm(forms.Form):
+    stegtype = forms.CharField(max_length=10, widget=forms.HiddenInput(), initial='Text')
+    stegimage = forms.ImageField(label="Image")
+    hiddentext = forms.CharField(label='Hidden Text', max_length=35)    
+
+    class Meta:
+        model = Post
+
+class AudioForm(forms.Form):
+    stegtype = forms.CharField(max_length=10, widget=forms.HiddenInput(), initial='Text')
+    hiddentext = forms.CharField(label='Hidden Text', max_length=35)    
+
+    class Meta:
+        model = Post
+
 
 #ImageField
 #FileField

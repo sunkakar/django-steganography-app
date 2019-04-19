@@ -1,25 +1,21 @@
 {% extends "audio_steg/base.html" %}
 {% block content %}
 
-<form action>
-        <div class="page-header">
-                <h1 class="roboto">Audio Steganography</h1>
-        </div>
-        <br>
-        <br>
-        <br>
-        <div class="form-group">
-                <input type="hidden" id="stegtype" name="stegtype" value="Audio">
-                <label for="image-input">Audio File</label>
-                <input type="file" class="form-control-file" id="imagefile">
-                <small id="sub-audio" class="form-text text-muted">This is the image that will contain the hidden text</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Hidden Text</label>
-          <input type="text" class="form-control" id="hiddentext" placeholder="Enter hiddentext">
-          <small id="emailHelp" class="form-text text-muted">This is the text that is hidden in the image</small>
-        </div>
-        <button type="submit" class="btn btn-primary">Encrypt!</button>
+<div class="page-header">
+    <h1 class="roboto">Audio Steganography</h1>
+</div>
+<br><br>
+<form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-primary">Encrypt!</button>        
 </form>
+{% if result != NULL %}
+<div class="jumbotron">
+        <h5>Result:</h5>
+        <p class="text-result"><pre><mark>{{ result }}</mark></pre></p>
+</div>
 
+
+{% endif %}
 {% endblock content %}

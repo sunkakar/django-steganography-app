@@ -1,6 +1,10 @@
 {% extends "audio_steg/base.html" %}
 {% block content %}
 
+<div class="page-header">
+        <h1 class="roboto">Text Steganography</h1>
+</div>
+<br><br>
 <form method="POST">
         {% csrf_token %}
         {{ form }}
@@ -9,9 +13,11 @@
         <button type="submit" class="btn btn-primary">Encrypt!</button>        
 </form>
 {% if result != NULL %}
-<div class="jumbotron text-result">
+<div class="jumbotron">
         <h5>Result:</h5>
-        <p><pre><mark>{{ result }}</mark></pre></p>
+        <p class="text-result"><pre><mark>{{ result }}</mark></pre></p>
 </div>
+
+
 {% endif %}
 {% endblock content %}

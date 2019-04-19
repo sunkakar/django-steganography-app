@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Post
-from .forms import TextForm
+from .forms import TextForm, ImageForm, AudioForm
 from django.views.generic import ListView, CreateView, TemplateView
 from django.contrib.auth.decorators import login_required
 from .text_encrypt import text_encrypt
@@ -14,9 +14,24 @@ def steg_base(request):
 def steg_welcome(request):
     return render(request, 'audio_steg/welcome.html')
 
-@login_required
-def steg_audio_input(request):
-    return render(request, 'audio_steg/audio_input.html')
+class StegAudioView(TemplateView):
+    template_name = 'audio_steg/audio_input.html'
+
+    def get(self,request):
+        form = AudioForm()
+        return render(request, self.template_name,{'form':form})
+
+    def post(self,request):
+        form = AudioForm(request.POST)
+        
+        if form.is_valid():
+            #form.save()
+            Type = form.cleaned_data.get('stegtype')
+            HiddenText = form.cleaned_data.get('hiddentext')
+            # Call function
+            # result = 
+        args = {'form': form, 'result':result}
+        return render(request, self.template_name, args)
 
 
 class StegTextView(TemplateView):
@@ -39,9 +54,26 @@ class StegTextView(TemplateView):
         args = {'form': form, 'result':result}
         return render(request, self.template_name, args)
 
-@login_required
-def steg_image_input(request):
-    return render(request, 'audio_steg/image_input.html')
+
+class StegImageView(TemplateView):
+    template_name = 'audio_steg/image_input.html'
+
+    def get(self,request):
+        form = ImageForm()
+        return render(request, self.template_name,{'form':form})
+
+    def post(self,request):
+        form = ImageForm(request.POST)
+        
+        if form.is_valid():
+            #form.save()
+            Type = form.cleaned_data.get('stegtype')
+            PlainText = form.cleaned_data.get('plaintext')
+            HiddenText = form.cleaned_data.get('hiddentext')
+            result = text_encrypt(PlainText,HiddenText)
+        args = {'form': form, 'result':result}
+        return render(request, self.template_name, args)
+
 
 @login_required
 def history(request):
