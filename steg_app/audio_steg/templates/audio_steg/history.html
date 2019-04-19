@@ -4,8 +4,18 @@
         <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
+                    {% if post.stegtype == "Text" %}
                     <a class="mr-2" href="/welcome">Steganography Type: {{post.stegtype}}</a>
                     <p class="article-content">Hidden Text: "{{ post.hiddentext }}"</p>
+                    <p class="article-content">Plaintext: "{{ post.stegtext }}"</p>
+                    {% elif post.stegtype == "Image" %}
+                    <a class="mr-2" href="/welcome">Steganography Type: {{post.stegtype}}</a>
+                    <p class="article-content">Hidden Text: "{{ post.hiddentext }}"</p>
+                    <img class="" src="{{ user.audio_steg.image.url }}"
+                    {% elif post.stegtype == "Audio" %}
+                    <a class="mr-2" href="/welcome">Steganography Type: {{post.stegtype}}</a>
+                    <p class="article-content">Hidden Text: "{{ post.hiddentext }}"</p>
+                    {% endif %}
                     <small>{{ post.date }}</small>
                 </div>
             </div>

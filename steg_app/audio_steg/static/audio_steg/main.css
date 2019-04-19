@@ -50,6 +50,17 @@ body {
     -moz-animation: fadein 1.5s; /* Firefox < 16 */
   }
 
+  mark { 
+    background-color: rgb(99, 210, 253);
+    color: black;
+  }
+
+  .text-result{
+    white-space: pre;
+    word-wrap: break-word;
+    width: 100px;
+  }
+
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }

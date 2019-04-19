@@ -19,8 +19,3 @@ def signup(request):
     else:
         form = UserSignUpForm()
     return render(request,'users/signup.html', {'form': form})
-
-
-@login_required
-def profile(request):
-    return render()

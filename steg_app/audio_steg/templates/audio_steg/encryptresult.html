@@ -1,0 +1,21 @@
+{% extends "audio_steg/base.html" %}
+{% block content %}
+
+    <div class="jumbotron">
+        <h1 class="roboto">Encrypted Value</h1>
+        <p>
+            <h2>{{ form.stegtype }}</h2>
+            <h3>{{ form.hiddentext }}</h3>
+            {% if form.stegtype == "Text" %}
+            <a class="btn btn-primary btn-lg" href="/text" role="button">Back</a>
+            {% elif form.stegtype == "Audio" %}
+            <a class="btn btn-primary btn-lg" href="/image" role="button">Image</a>
+            {% elif form.stegtype == "Image" %}
+            <a class="btn btn-primary btn-lg" href="/audio" role="button">Audio</a>
+            <img class="image" src="{{ user.post.stegimage.url }}">
+            {% endif %}
+        </p>
+    </div>
+
+
+{% endblock content %}

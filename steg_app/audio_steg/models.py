@@ -5,13 +5,12 @@ from django.utils import timezone
 
 class Post(models.Model):
     stegtype = models.CharField(max_length=20)
-    hiddentext = models.TextField()
+    hiddentext = models.TextField(max_length=60)
     date = models.DateTimeField(default=timezone.now)
-    #stegtext = models.CharField(max_length=100)
-    #stegaudio = models.CharField(max_length=100)
-    #stegimage = 
-
+    stegtext = models.CharField(max_length=300)
+    stegimage = models.ImageField(default='default.jpeg',upload_to='steg_image')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.stegtype
+

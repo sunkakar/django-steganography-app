@@ -1,7 +1,7 @@
 {% extends "audio_steg/base.html" %}
 {% block content %}
 
-<form>
+<form action>
         <div class="page-header">
                 <h1 class="roboto">Audio Steganography</h1>
         </div>
@@ -9,6 +9,7 @@
         <br>
         <br>
         <div class="form-group">
+                <input type="hidden" id="stegtype" name="stegtype" value="Audio">
                 <label for="image-input">Audio File</label>
                 <input type="file" class="form-control-file" id="imagefile">
                 <small id="sub-audio" class="form-text text-muted">This is the image that will contain the hidden text</small>
