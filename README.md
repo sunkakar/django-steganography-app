@@ -5,7 +5,7 @@ The application allows you to learn about steganography through implementation. 
 
 ## Getting Started
 
-Clone the repo
+Clone the repository
 
 ### Prerequisites
 
@@ -34,7 +34,7 @@ python3 manage.py runserver
 
 ```
 
-This will run the Sjango server and you can access your web app on:
+This will run the Django server and you can access your web app on:
 
 ```
 http://127.0.0.1:8000/
@@ -60,7 +60,7 @@ The web app is responsive to all device dimensions!
 * [Python](https://www.python.org/) - Written in python
 * [Django](https://www.djangoproject.com/) - The python web framework used
 * [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) - The python web framework used
-* [SQLite](https://www.sqlite.org/index.html) - The databaase used
+* [SQLite](https://www.sqlite.org/index.html) - The database used
 
 ## Contributing
 
@@ -71,8 +71,7 @@ The web app is responsive to all device dimensions!
 ## Authors
 
 * **Sundeep Kakar**
-* Shahbegh Singh Kalra
-* Aghabi Salama
+
 
 ## Acknowledgments
 
