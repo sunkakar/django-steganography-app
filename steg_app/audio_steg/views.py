@@ -4,6 +4,7 @@ from .forms import TextForm, ImageForm, AudioForm
 from django.views.generic import ListView, CreateView, TemplateView
 from django.contrib.auth.decorators import login_required
 from .text_encrypt import text_encrypt
+from .audio_encrypt import audio_encrypt, music
 
 
 # Views
@@ -28,8 +29,9 @@ class StegAudioView(TemplateView):
             #form.save()
             Type = form.cleaned_data.get('stegtype')
             HiddenText = form.cleaned_data.get('hiddentext')
-            # Call function
-            # result = 
+            result1 = audio_encrypt(HiddenText)
+            result2 = music(HiddenText)
+            result = {'octalval':result1, 'notes':result2}
         args = {'form': form, 'result':result}
         return render(request, self.template_name, args)
 

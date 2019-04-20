@@ -31,6 +31,8 @@ def encode_image(img, msg):
             encoded.putpixel((col, row), (asc, g , b))
             index += 1
     return encoded
+
+
 def decode_image(img):
     """
     check the red portion of an image (r, g, b) tuple for

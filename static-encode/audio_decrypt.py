@@ -2,7 +2,7 @@
 #global decipher variable
 decipher = []
 
-def enter_text():
+def enter_text(text):
 
     fileName = input("Please enter the name of key text file in .txt format for deciphering: ")
     fr = open(fileName,'r')

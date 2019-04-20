@@ -17,15 +17,14 @@ def enter_text():
     return message
     
     
-def encrypt_text():
+def encrypt_text(hiddentext):
     
     melody = []
     melody2 = []
-    message = enter_text()
     i = 0
     #ASCII value of the text
-    for i in range(len(message)):
-        melody.append(int(ord(message[i])))
+    for i in range(len(hiddentext)):
+        melody.append(int(ord(hiddentext[i])))
         i = i+1
 
     i = 0
