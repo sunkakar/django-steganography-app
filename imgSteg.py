@@ -20,7 +20,7 @@ def modPxl(pix, data):
       
     datalist = newData(data) 
     lendata = len(datalist) 
-    imdata = iter(pix) 
+    imdata = iter(pix)
   
     for i in range(lendata): 
           

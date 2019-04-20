@@ -43,4 +43,5 @@ def decode():
     for i in range(0,len(asci)):
         a = chr(asci[i])
         fw.write(a)
-decode()
+
+
