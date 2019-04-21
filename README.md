@@ -53,7 +53,7 @@ The web app is responsive to all device dimensions!
 
 ## Demonstration
 
-	[Link](https://www.youtube.com/watch?v=x6JAmRrCzk)
+[Link](https://www.youtube.com/watch?v=x6JAmRrCzk)
 
 ## Built With
 
