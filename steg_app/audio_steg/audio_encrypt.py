@@ -59,3 +59,33 @@ def music(hiddentext):
 
     #generate a key file that can be decoded later
     return (sonicpi_output)
+
+
+def audio_decrypt(decipher_str):
+
+    asci = []
+    decipher_clean = decipher_str.replace("[","")
+    decipher_clean = decipher_clean.replace("]","")
+    decipher = decipher_clean.split(",")
+    list(map(int, decipher))
+    output = ""
+    # converting the key back to ascii
+    for i in range(0,len(decipher)):
+
+        power = 0
+        decimal = 0
+        octal = int(decipher[i])
+        while(octal > 0):
+
+           decimal+= int(octal%10)*(8**power)
+           power+=1
+           octal= int(octal/10)
+
+        asci.append(decimal)
+
+    print(asci)
+    
+    for i in range(0,len(asci)):
+        output += chr(asci[i])
+
+    return(output)

@@ -3,8 +3,8 @@ from .models import Post
 from .forms import TextForm, ImageForm, AudioForm
 from django.views.generic import ListView, CreateView, TemplateView
 from django.contrib.auth.decorators import login_required
-from .text_encrypt import text_encrypt
-from .audio_encrypt import audio_encrypt, music
+from .text_encrypt import text_encrypt, text_decrypt
+from .audio_encrypt import audio_encrypt, music, audio_decrypt
 
 
 # Views
@@ -14,6 +14,8 @@ def steg_base(request):
 
 def steg_welcome(request):
     return render(request, 'audio_steg/welcome.html')
+
+
 
 class StegAudioView(TemplateView):
     template_name = 'audio_steg/audio_input.html'
@@ -29,11 +31,21 @@ class StegAudioView(TemplateView):
             #form.save()
             Type = form.cleaned_data.get('stegtype')
             HiddenText = form.cleaned_data.get('hiddentext')
-            result1 = audio_encrypt(HiddenText)
-            result2 = music(HiddenText)
-            result = {'octalval':result1, 'notes':result2}
-        args = {'form': form, 'result':result}
+            choice_field = form.cleaned_data.get('choice_field')
+            
+            result = 'Invalid Form Input. Try Again!'
+            if choice_field == '1':    
+                result1 = audio_encrypt(HiddenText)
+                result2 = music(HiddenText)
+                result = {'octalval':result1, 'notes':result2}
+
+            elif choice_field == '2':
+                result1 = audio_decrypt(HiddenText)
+                result = {'notes':result1}
+                print(result1)
+        args = {'form': form, 'result':result, 'choice':choice_field}
         return render(request, self.template_name, args)
+
 
 
 class StegTextView(TemplateView):
@@ -51,8 +63,14 @@ class StegTextView(TemplateView):
             Type = form.cleaned_data.get('stegtype')
             PlainText = form.cleaned_data.get('plaintext')
             HiddenText = form.cleaned_data.get('hiddentext')
-            result = text_encrypt(PlainText,HiddenText)
-            print(result + ":end")
+            choice_field = form.cleaned_data.get('choice_field')
+            result = 'Invalid Form Input. Try Again!'
+            if choice_field == '1':    
+                result = text_encrypt(PlainText,HiddenText)
+
+            elif choice_field == '2':
+                result = text_decrypt(PlainText)
+
         args = {'form': form, 'result':result}
         return render(request, self.template_name, args)
 
@@ -77,6 +95,7 @@ class StegImageView(TemplateView):
         return render(request, self.template_name, args)
 
 
+
 @login_required
 def history(request):
     context = {
@@ -90,20 +109,11 @@ def about(request):
 
 def encryptresult(request):
     return render(request, 'audio_steg/encryptresult.html')
-    
+
+
 
 class HistoryListView(ListView):
     model = Post
     template_name = 'audio_steg/history.html'
     context_object_name = 'posts'
     ordering = ['-date']
-
-'''
-class SubmitTextView(CreateView):
-    model = Post
-    template_name = 'audio_steg/text_input.html'
-    fields = ['stegtype','CharField','CharField']
-    def get(self,request):
-        form.SubmitTextForm()
-        return render(request, self.template_name, {'form': forms})
-'''

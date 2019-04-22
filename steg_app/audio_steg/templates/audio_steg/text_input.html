@@ -1,4 +1,5 @@
 {% extends "audio_steg/base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
 
 <div class="page-header">
@@ -7,9 +8,11 @@
 <br><br>
 <form method="POST">
         {% csrf_token %}
-        {{ form }}
-
-
+        <h5>Instructions: </h5>
+        <small>Select the mode. In decrypt mode, enter <b>any single character</b> at the end of the string for the form to handle multiple whitespace submission.</small>
+        <br>
+        <br>
+        {{ form|crispy }}
         <button type="submit" class="btn btn-primary">Encrypt!</button>        
 </form>
 {% if result != NULL %}

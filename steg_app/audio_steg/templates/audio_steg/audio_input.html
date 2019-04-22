@@ -1,4 +1,5 @@
 {% extends "audio_steg/base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
 
 <div class="page-header">
@@ -7,14 +8,18 @@
 <br><br>
 <form method="POST">
         {% csrf_token %}
-        {{ form }}
-        <button type="submit" class="btn btn-primary">Encrypt!</button>        
+        {{ form | crispy }}
+        <button type="submit" class="btn btn-primary">Go!</button>        
 </form>
 {% if result != NULL %}
 <div class="jumbotron">
         <h5>Result:</h5>
+        
         <p class="text-result">Notes: {{ result.notes }}</p>
-        <p><small>This is the music note pattern for the encrypted audio file. The music should be playing right now.</small></p>
+        <small>This is the music note pattern for the encrypted audio file. The music should be playing right now.</small>
+        <br><br>
+        <p class="text-result">Key: {{ result.octalval }}</p>
+        <small>This is the key for the shared key encryption</small>
 </div>
 
 

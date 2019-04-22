@@ -36,7 +36,7 @@ def decode():
            
         asci.append(decimal)
            
-    #print(asci)
+    print(asci)
 
     #writing the deciphered message inside a new file
     fw = open("decrypted.txt",'w')
