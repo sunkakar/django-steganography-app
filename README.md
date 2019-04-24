@@ -14,6 +14,7 @@ You will need to install the following dependencies
 ```
 Python 3.5+
 Django 2+
+Sonic Pi 3+
 ```
 
 ### Installing
@@ -53,7 +54,7 @@ The web app is responsive to all device dimensions!
 
 ## Demonstration
 
-[Link](https://www.youtube.com/watch?v=x6JAmRrCzk)
+Presented in class
 
 ## Built With
 
