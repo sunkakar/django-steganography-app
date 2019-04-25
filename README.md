@@ -56,6 +56,11 @@ The web app is responsive to all device dimensions!
 
 Presented in class
 
+## Notes
+
+- Works by default in windows. For linux, configure the `qjackctl` audio toolkit to allow Sonic Pi.  
+- Sonic Pi should be open durnig execution to allow for the notes to translate into music.
+
 ## Built With
 
 * [Python](https://www.python.org/) - Written in python
