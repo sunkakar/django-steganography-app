@@ -15,6 +15,7 @@ You will need to install the following dependencies
 Python 3.5+
 Django 2+
 Sonic Pi 3+
+django-crispy-forms 
 ```
 
 ### Installing
