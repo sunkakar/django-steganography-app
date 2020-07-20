@@ -69,12 +69,6 @@ Presented in class
 * [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) - The python web framework used
 * [SQLite](https://www.sqlite.org/index.html) - The database used
 
-## Contributing
-
-* Sundeep Kakar
-* Shahbegh Singh Kalra
-* Aghabi Salama
-
 ## Authors
 
 * **Sundeep Kakar**
